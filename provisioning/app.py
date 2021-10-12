@@ -6,8 +6,9 @@ from aws_cdk import core
 from stacks.announcment_app_stack import AnnouncementStack
 
 
-app = core.App()
-env = core.Environment(account=os.environ.get("CDK_DEFAULT_ACCOUNT", None),
-                       region=os.environ.get("CDK_DEFAULT_REGION", None))
-AnnouncementStack(app, "AnnouncementStack", env=env)
-app.synth()
+if __name__ == '__main__':
+    app = core.App()
+    env = core.Environment(account=os.environ.get("CDK_DEFAULT_ACCOUNT", None),
+                           region=os.environ.get("CDK_DEFAULT_REGION", None))
+    AnnouncementStack(app, "AnnouncementStack", env=env)
+    app.synth()
