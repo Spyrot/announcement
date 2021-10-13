@@ -12,3 +12,7 @@ class Announcement(BaseModel):
     title: str
     date: Optional[datetime] = datetime.now()
     description: Optional[str] = ""
+
+
+class AnnouncementCreate(Announcement):
+    pass
