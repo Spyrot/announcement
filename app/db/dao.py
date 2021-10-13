@@ -11,6 +11,7 @@ from schemas import Announcement as AnnouncementSchema
 
 DB_ENDPOINT_URL = "DB_ENDPOINT_URL"
 DB_RESOURCE_NAME = "DB_RESOURCE_NAME"
+DB_REGION = "DB_REGION"
 
 CURSOR_NEXT_TOKEN = "LastEvaluatedKey"
 CURSOR_STARTING_TOKEN = "StartingToken"
@@ -22,10 +23,14 @@ class AnnouncementDao:
         if connection is None:
             db_resource_name = os.environ.get(DB_RESOURCE_NAME, "dynamodb")
             db_endpoint_url = os.environ.get(DB_ENDPOINT_URL, "http://localhost:8000")
-            connection = boto3.resource(db_resource_name, endpoint_url=db_endpoint_url)
+            db_region = os.environ.get(DB_REGION, None)
+            if DB_REGION is not None:
+                connection = boto3.resource(db_resource_name, region_name=db_region)
+            else:
+                connection = boto3.resource(db_resource_name, endpoint_url=db_endpoint_url)
         self.connection = connection
 
-    def __get_from_cursor(self, table_name, limit: int = 10,
+    def __get_from_cursor(self, table_name: str, limit: int = 10,
                           token: Optional[dict[str, str]] = None) -> tuple[list[dict], Optional[dict[str, str]]]:
         if token:
             response = self.connection.Table(table_name).scan(Limit=limit, ExclusiveStartKey=token)
