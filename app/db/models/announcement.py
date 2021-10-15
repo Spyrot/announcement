@@ -11,7 +11,7 @@ from datetime import datetime
 class Announcement:
     title: str
     date: str
-    _date: str = field(init=False, repr=False, default=datetime.now().isoformat())
+    _date: str = field(init=False, repr=False)
     description: str = ""
 
     @property
