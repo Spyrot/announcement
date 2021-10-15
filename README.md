@@ -1,9 +1,9 @@
 ###How to deploy solution
 ####1. Prerequisites
-* AWS CLI installed
-* AWS Console Access
-* Python3+ installed
-* AWS CDK installed
+* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed
+* [AWS Console](https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin) Access
+* [Python3+](https://www.python.org/downloads/) installed
+* [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) installed
 ####2. Configure AWS user with programmatic access
 1) Login to AWS Console
 2) Go to IAM

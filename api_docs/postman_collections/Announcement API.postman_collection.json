@@ -1,0 +1,1009 @@
+{
+	"info": {
+		"_postman_id": "0e3138a2-7d56-489c-a22a-78a1a5847cb6",
+		"name": "Announcement API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Announcements List",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/announcements",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"announcements"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized access",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 16:32:53 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "75d48b06-26e9-4745-ac08-e669a14606c9"
+						},
+						{
+							"key": "x-amzn-ErrorType",
+							"value": "UnauthorizedException"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQgAYE3LyK4FQzw="
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 9e382e3fea313f57a8108121ea203aa7.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "WUXWOLOwu1CsETvnSfY47l-GjCgoDZd7q7PnRG6m_FfmAYiYZ2ezBA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				},
+				{
+					"name": "Empty announcements list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:09:41 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "d6e78733-17eb-412f-a916-0e52473e4e82"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "2"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ2-YFYXyK4FrFw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d1f5-06647dfc43788bb05b9fa92b;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "XxXK3O7ek0RXpToScn8E22VTPXM9WDba6k66v2lZBss5N-4Rj-nr9g=="
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "Announcements List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:13:32 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "3e7066f0-1906-457b-ae4e-c24f7b4ce397"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "154"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3igHF_yK4FUyg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d2dc-382bdec82a52c1bd6ea0b73e;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "l0Z7ILD1eozdpCCIFb3Deybaeqr_gdYpTV2FWoqT9kDq8ZfHnc2nCw=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"Announcement 1\",\n        \"date\": \"2021-10-15T19:12:08.911889\",\n        \"description\": \"\"\n    },\n    {\n        \"title\": \"Title 2\",\n        \"date\": \"2021-10-15T19:13:26.127474\",\n        \"description\": \"\"\n    }\n]"
+				},
+				{
+					"name": "Pagination 'limit' param",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements?limit=2",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:15:07 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "41189838-390e-4723-90aa-f53c65a7a2ea"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "165"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3xOFNWyK4FUTw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d33a-78585447258780452e7420ac;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "6COzYXO7AL_y2h3i0iUSLFeoJyTyA-hXOdl6TQPM3jNiH2VVM9JhhA=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"Announcement 1\",\n        \"date\": \"2021-10-15T19:12:08.911889\",\n        \"description\": \"\"\n    },\n    {\n        \"title\": \"Title 3\",\n        \"date\": \"2021-10-15T19:14:37.042648\",\n        \"description\": \"Lorem ipsum\"\n    }\n]"
+				},
+				{
+					"name": "limit param constraints",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements?limit=0",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "153"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:15:34 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "c83a41ad-b39a-469f-a90f-5ece03078c42"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "153"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ31lG-nyK4FmsQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d356-7ca7419754520a6804cf5f7f;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "ITIdZlttAyj8oDSeclY4C1eWX0vndQtHdijsD5bnRqOzndvVVDRp2g=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"query\",\n                \"limit\"\n            ],\n            \"msg\": \"ensure this value is greater than or equal to 1\",\n            \"type\": \"value_error.number.not_ge\",\n            \"ctx\": {\n                \"limit_value\": 1\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "Pagination 'skip' param",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements?limit=1&skip=1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "skip",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:16:06 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "4d20219a-9236-4490-b31c-cbbc0bfe139b"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "85"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ36hGAxSK4Frhw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d376-2e970553569a4c7f11b38d06;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "MsmlFTnQkaAUI9xCpsgMNUrQu3VJ8xOB6tzDn2LTsgI_Kf9uTVGLbw=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"title\": \"Title 3\",\n        \"date\": \"2021-10-15T19:14:37.042648\",\n        \"description\": \"Lorem ipsum\"\n    }\n]"
+				},
+				{
+					"name": "skip param constraints",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements?limit=1&skip=-1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "skip",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:16:32 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "e95b87be-31ec-42dd-8d38-b0c95c34717a"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "152"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3-lGQeyK4Fpng="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d390-269cace80f1d9db935f2be16;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "5cXGOORT-soOlxlxo_G64ZpZF4ePskG6eaMEX8sPfmSOV320fvXdmQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"query\",\n                \"skip\"\n            ],\n            \"msg\": \"ensure this value is greater than or equal to 0\",\n            \"type\": \"value_error.number.not_ge\",\n            \"ctx\": {\n                \"limit_value\": 0\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create announcement",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Announcement 8\",\n    \"date\": \"2021-10-15T16:40:58.305551\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/announcements",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"announcements"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create announcement",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Announcement 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:12:08 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "8de1011a-e3b8-488a-a91c-de54bbd1f048"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "79"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3VaFtyyK4Fphg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d288-585248060137d5d00d015d52;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "kQ1u_MAIaFDAiqR1gwIWI5Y89RTpV_3GoNgsBNDI_JY2Vh-6TPu_HQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Announcement 1\",\n    \"date\": \"2021-10-15T19:12:08.911889\",\n    \"description\": \"\"\n}"
+				},
+				{
+					"name": "Already exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Announcement 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:12:23 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "03ca7219-5429-4654-a724-caa646b8c1b6"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "96"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3XtGtFSK4FSbA="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d297-4eae666a6139c96276c6954d;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "w00XJ-nZztSK_yhdsIO_T7hf_HJFqsCxWJXcHdlcX1a72tFfhbON5A=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": {\n        \"Message\": \"The conditional request failed\",\n        \"Code\": \"ConditionalCheckFailedException\"\n    }\n}"
+				},
+				{
+					"name": "MIssing title",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Describe your data here\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:12:57 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "3cd2a4ee-128c-4f32-a0c3-78f71812a6ac"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "89"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3c7GpqSK4FtoQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d2b8-1b78c6c92760adbd55f82c28;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "rJU-78ZCub46aGaJnzVkVYp9F3NS1e8MVumOhLjkrA5ISz3IPqMXfg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"body\",\n                \"title\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Description too large",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Title 2\",\n    \"description\": \"e;ughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruhughweriguwherogiuehgwieruh\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:14:03 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "94a2f96c-9aad-4d5c-a40a-91ccfaeac96e"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "114"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3nXECeyK4FeCw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d2fb-73d32d5823316f4f37a81611;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "qtFVDsliNzn_OHnS7DnPfgN0UWsc3CIDN-fZQqYDMwqswsp3g0uy2A=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"body\",\n                \"description\"\n            ],\n            \"msg\": \"description length must be lower than 256\",\n            \"type\": \"value_error\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Wrong date format",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Title 3\",\n    \"description\": \"Lorem ipsum\",\n    \"date\": \"2021-20-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Oct 2021 19:14:50 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f0972434-ec02-4fbf-917c-00b3ad1de4e9"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "98"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HQ3uoGFqSK4Fstg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6169d32a-7c62d0960c8b725f506db7de;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 0ae086e001f426091a73b5c41a75d670.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BUD50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "W1wd0bPRS_hXfTv7hj8IaPzbv5isiobOnnlxqRkWy2OxdlRCv-5G2Q=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"body\",\n                \"date\"\n            ],\n            \"msg\": \"invalid datetime format\",\n            \"type\": \"value_error.datetime\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

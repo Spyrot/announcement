@@ -36,10 +36,17 @@ class AnnouncementStack(cdk.Stack):
 
         # Cognito
         sign_in_alias = aws_cdk.aws_cognito.SignInAliases(username=True, email=True)
-        auth_flow = aws_cdk.aws_cognito.AuthFlow(user_password=True)
+        auth_flow = aws_cdk.aws_cognito.AuthFlow(user_password=True, admin_user_password=True)
+        password_policy = aws_cdk.aws_cognito.PasswordPolicy(min_length=6,
+                                                             require_digits=True,
+                                                             require_lowercase=True,
+                                                             require_symbols=False,
+                                                             require_uppercase=False)
         user_pool = aws_cognito.UserPool(self, "announcement_app_users",
                                          user_pool_name="announcement_app_users",
-                                         sign_in_aliases=sign_in_alias)
+                                         sign_in_aliases=sign_in_alias,
+                                         self_sign_up_enabled=True,
+                                         password_policy=password_policy)
         user_pool.add_client("app-client", auth_flows=auth_flow, generate_secret=False)
         auth = aws_apigateway.CognitoUserPoolsAuthorizer(self, "usersAuthorizer", cognito_user_pools=[user_pool])
 
