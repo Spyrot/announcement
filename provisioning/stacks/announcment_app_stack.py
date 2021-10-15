@@ -27,7 +27,6 @@ class AnnouncementStack(cdk.Stack):
         # Api Gateway
         api = aws_apigateway.LambdaRestApi(self, "ApiGateway", handler=lambda_function, proxy=False)
         announcements = api.root.add_resource("announcements")
-        docs = api.root.add_resource("docs")
 
         # DynamoDB
         partition_key = aws_dynamodb.Attribute(name="title", type=aws_dynamodb.AttributeType.STRING)
@@ -43,5 +42,7 @@ class AnnouncementStack(cdk.Stack):
                                          sign_in_aliases=sign_in_alias)
         user_pool.add_client("app-client", auth_flows=auth_flow, generate_secret=False)
         auth = aws_apigateway.CognitoUserPoolsAuthorizer(self, "usersAuthorizer", cognito_user_pools=[user_pool])
+
         announcements.add_method("GET", authorizer=auth, authorization_type=aws_apigateway.AuthorizationType.COGNITO)
         announcements.add_method("POST", authorizer=auth, authorization_type=aws_apigateway.AuthorizationType.COGNITO)
+        api.root.add_method("GET")

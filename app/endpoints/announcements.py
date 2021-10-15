@@ -4,6 +4,7 @@ from typing import Optional
 
 # Third-party application imports
 from fastapi import APIRouter, Query
+from fastapi.responses import RedirectResponse
 
 # Local application imports
 from schemas import Announcement
@@ -17,9 +18,14 @@ RESPONSE_CODES = {
 router = APIRouter()
 
 
+@router.get("/")
+def redirect():
+    return RedirectResponse("/announcements")
+
+
 @router.get("/announcements", response_model=list[Announcement])
 def get_announcements(limit: Optional[int] = Query(10, ge=1, le=100),
-                            skip: Optional[int] = Query(0, ge=0)):
+                      skip: Optional[int] = Query(0, ge=0)):
     items = db_connector.get_many(TABLE_NAME, limit, skip)
     # DB gives us actual model, but not a business logic model. In our case this is an overhead when I translated
     # DB models to Pydantic models, but if our logic doesn't correspond to db model than it will require
