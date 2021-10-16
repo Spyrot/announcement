@@ -560,6 +560,73 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"query\",\n                \"skip\"\n            ],\n            \"msg\": \"ensure this value is greater than or equal to 0\",\n            \"type\": \"value_error.number.not_ge\",\n            \"ctx\": {\n                \"limit_value\": 0\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "Expired auth token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/announcements",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"announcements"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 16 Oct 2021 10:57:24 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "2b80887b-e0af-4791-94b3-cfa8686317c3"
+						},
+						{
+							"key": "x-amzn-ErrorType",
+							"value": "UnauthorizedException"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HTBzNEtOyK4FZSQ="
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 1aa52a2a71a599aaf6b3df3a9c53b268.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "FRA60-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "KZ3edDJmNBYdc9sArLihQ1qWCvT56OjcyVa3Zhgi1jzQwl7KEIaejA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The incoming token has expired\"\n}"
 				}
 			]
 		},
