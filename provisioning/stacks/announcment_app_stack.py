@@ -55,4 +55,3 @@ class AnnouncementStack(cdk.Stack):
         announcements.add_method("GET")
         announcements.add_method("POST", authorizer=auth, authorization_type=aws_apigateway.AuthorizationType.COGNITO)
         api.root.add_method("GET")
-        api.root.add_method("POST")

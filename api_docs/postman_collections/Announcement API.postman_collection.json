@@ -1,108 +1,70 @@
 {
 	"info": {
-		"_postman_id": "0e3138a2-7d56-489c-a22a-78a1a5847cb6",
+		"_postman_id": "ca3d1b27-a545-48a8-a072-72dd3d71cd96",
 		"name": "Announcement API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18219155"
 	},
 	"item": [
 		{
 			"name": "Announcements List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"try {",
+							"    pm.test(\"HTTP status code is 200.\", function () {",
+							"        pm.response.to.have.status(200);",
+							"    });",
+							"",
+							"    var data = pm.response.json();",
+							"    pm.test('Not empty response', function() {",
+							"        pm.expect(data).is.not.null;",
+							"    });",
+							"",
+							"    pm.test('Only one item returned', function() {",
+							"        pm.expect(data.length).to.equal(1);",
+							"    });",
+							"",
+							"} catch (err) {",
+							"    console.log(err);",
+							"    pm.test(\"No runtime error\", function() {",
+							"       pm.expect(err).to.be.undefined; ",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
-					"type": "apikey",
-					"apikey": [
-						{
-							"key": "value",
-							"value": "{{TOKEN}}",
-							"type": "string"
-						},
-						{
-							"key": "key",
-							"value": "Authorization",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{HOST}}/announcements",
+					"raw": "{{HOST}}/announcements?limit=1&skip=1",
 					"host": [
 						"{{HOST}}"
 					],
 					"path": [
 						"announcements"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "skip",
+							"value": "1"
+						}
 					]
 				}
 			},
 			"response": [
-				{
-					"name": "Unauthorized access",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{HOST}}/announcements",
-							"host": [
-								"{{HOST}}"
-							],
-							"path": [
-								"announcements"
-							]
-						}
-					},
-					"status": "Unauthorized",
-					"code": 401,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Content-Length",
-							"value": "26"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 15 Oct 2021 16:32:53 GMT"
-						},
-						{
-							"key": "x-amzn-RequestId",
-							"value": "75d48b06-26e9-4745-ac08-e669a14606c9"
-						},
-						{
-							"key": "x-amzn-ErrorType",
-							"value": "UnauthorizedException"
-						},
-						{
-							"key": "x-amz-apigw-id",
-							"value": "HQgAYE3LyK4FQzw="
-						},
-						{
-							"key": "X-Cache",
-							"value": "Error from cloudfront"
-						},
-						{
-							"key": "Via",
-							"value": "1.1 9e382e3fea313f57a8108121ea203aa7.cloudfront.net (CloudFront)"
-						},
-						{
-							"key": "X-Amz-Cf-Pop",
-							"value": "BUD50-C1"
-						},
-						{
-							"key": "X-Amz-Cf-Id",
-							"value": "WUXWOLOwu1CsETvnSfY47l-GjCgoDZd7q7PnRG6m_FfmAYiYZ2ezBA=="
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Unauthorized\"\n}"
-				},
 				{
 					"name": "Empty announcements list",
 					"originalRequest": {
@@ -632,6 +594,17 @@
 		},
 		{
 			"name": "Create announcement",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "apikey",
@@ -645,6 +618,11 @@
 							"key": "key",
 							"value": "Authorization",
 							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
 						}
 					]
 				},
@@ -652,7 +630,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Announcement 8\",\n    \"date\": \"2021-10-15T16:40:58.305551\"\n}",
+					"raw": "{\n    \"title\": \"Announcement 1\",\n    \"date\": \"2021-10-15T16:40:58.305551\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"

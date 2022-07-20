@@ -1,3 +1,10 @@
+### How to run locally
+
+Please, use uvicorn for local development. Docker container with local DynamoDB might be used as DB
+
+1. Uvicorn: https://fastapi.tiangolo.com/deployment/manually/
+2. DynamoDB: https://hub.docker.com/r/amazon/dynamodb-local
+
 ###How to deploy solution
 ####1. Prerequisites
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed
@@ -54,7 +61,7 @@ aws cognito-idp admin-confirm-sign-up --region {your-aws-region} --user-pool-id 
 ```
 
 3. Authenticate (get id token and use it in postman). 
-   auth.json in root of repo as example file. Adjust according to your env
+   auth.json in root of repo as example file. Adjust params before running command below
 ```shell
 aws cognito-idp admin-initiate-auth --region {your-aws-region} --cli-input-json file://auth.json
 ```
