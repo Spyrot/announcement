@@ -30,8 +30,10 @@ class AnnouncementStack(cdk.Stack):
 
         # DynamoDB
         partition_key = aws_dynamodb.Attribute(name="title", type=aws_dynamodb.AttributeType.STRING)
+        sort_key = aws_dynamodb.Attribute(name="date", type=aws_dynamodb.AttributeType.STRING)
         db = aws_dynamodb.Table(self, "announcements",
-                                partition_key=partition_key, table_name="announcements")
+                                partition_key=partition_key, sort_key=sort_key,
+                                table_name="announcements")
         db.grant_read_write_data(lambda_function)
 
         # Cognito
@@ -50,6 +52,7 @@ class AnnouncementStack(cdk.Stack):
         user_pool.add_client("app-client", auth_flows=auth_flow, generate_secret=False)
         auth = aws_apigateway.CognitoUserPoolsAuthorizer(self, "usersAuthorizer", cognito_user_pools=[user_pool])
 
-        announcements.add_method("GET", authorizer=auth, authorization_type=aws_apigateway.AuthorizationType.COGNITO)
+        announcements.add_method("GET")
         announcements.add_method("POST", authorizer=auth, authorization_type=aws_apigateway.AuthorizationType.COGNITO)
         api.root.add_method("GET")
+        api.root.add_method("POST")

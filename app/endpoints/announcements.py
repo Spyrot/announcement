@@ -11,10 +11,7 @@ from schemas import Announcement
 from db.dao import db_connector
 
 TABLE_NAME = "announcements"
-RESPONSE_CODES = {
-    409: "item with such title already exists",
 
-}
 router = APIRouter()
 
 

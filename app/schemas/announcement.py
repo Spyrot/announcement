@@ -24,7 +24,3 @@ class Announcement(BaseModel):
         if len(v) > 256:
             raise ValueError("description length must be lower than 256")
         return v
-
-
-class AnnouncementCreate(Announcement):
-    pass

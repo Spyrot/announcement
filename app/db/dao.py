@@ -4,7 +4,6 @@ from typing import Optional
 
 # Third-party application imports
 import boto3
-import botocore.exceptions
 
 # Local application imports
 from db.models.announcement import Announcement
@@ -42,7 +41,7 @@ class AnnouncementDao:
 
     def get_many(self, table_name: str, limit: int = 10, skip: int = 0) -> list[Announcement]:
         items, token = self.__get_from_cursor(table_name, limit)
-        while token and len(items) < limit+skip:
+        while token and len(items) < limit + skip:
             data, token = self.__get_from_cursor(table_name, limit, token)
             items.extend(data)
         items = items[skip:skip+limit]

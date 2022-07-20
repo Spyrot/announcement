@@ -58,3 +58,17 @@ aws cognito-idp admin-confirm-sign-up --region {your-aws-region} --user-pool-id 
 ```shell
 aws cognito-idp admin-initiate-auth --region {your-aws-region} --cli-input-json file://auth.json
 ```
+
+###Choices made around serverless components
+
+1. Lambda - allows running code without provisioning or managing servers. Easy to deploy and integrate
+with API Gateway service. We will pay only for time which saves money if code is not called frequently.
+Lambda can scale automatically based on configuration
+2. DynamoDB - NoSQL database which provides fast performance. AWS will care about provisioning, infrastructure and updates.
+It has different payment options from hardcoded read/write capacity(fewer costs for predictable workloads) to scaling based on amount of requests
+Ideally, I should avoid using scan during pagination and choose another approach in case we would like to have frequent pagination requests
+On the other hand DynamoDB has DAX feature which might be useful during high read workloads
+3. API Gateway - includes validation, throttling, default error and responses. Easy to integrate with lambda.
+4. CloudFormation - IaC solution which help to keep infrastructure consistent, easy to scale, update or rollback
+5. AWS Cognito - helps to control user authentication and authorization using different flows like:
+email based or federation login (Third-Party auth providers)
